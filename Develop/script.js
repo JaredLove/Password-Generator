@@ -1,9 +1,14 @@
 // Assignment code here
+//special characters
 special = ["!", "#", "$", "%", "&", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "^", "`", "{", "|", "}", "~", "(", ")", "_"];
+//numeric values 
 numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+//lower case values
 alphabetLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+//upper case values
 alphabetUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
+var length;
 var promtLowerCase;
 var promtUpperCase;
 var promtNumeric;
@@ -12,23 +17,20 @@ var promtLength;
 var picks;
 
 function generatePassword() {
-  var length = window.prompt("Choose a password length between 8 and 128");
+ length = window.prompt("Choose a password length between 8 and 128");
 
-  if (!length) {
-      alert("Choose a correct length between 8 and 128")
+    if (isNaN(length)) {
+      alert ("Please enter a number!")
       return generatePassword();
     }
+
 
     else if (length < 8 || length > 128) {
       alert("The password length must be between 8 and 128 characters")
       return generatePassword();
     }
 
-    else if (isNaN(length)) {
-      alert ("Please enter a number!")
-      return generatePassword();
-    }
-
+    
     else {
     promtLowerCase = confirm("Will this password use lowercase letters?");
     promtUpperCase = confirm("Will this password use Uowercase letters?");
@@ -96,10 +98,21 @@ function generatePassword() {
     
 
 
+    var password = [];
+    for (var i = 0; i < length; i ++) {
+      var picks2 = picks[Math.floor(Math.random() * picks.length)];
+      password.push(picks2);
+    }
+
+    
+    var password2 = password.join("");
+    return password2;
+
+  
 
       
     
-  return(picks);
+  
 }
 
 // Get references to the #generate element
