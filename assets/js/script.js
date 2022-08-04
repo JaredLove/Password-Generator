@@ -3,7 +3,7 @@
 special = ["!", "#", "$", "%", "&", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "^", "`", "{", "|", "}", "~", "(", ")", "_"];
 
 //numeric values 
-numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 //lower case values
 alphabetLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -30,21 +30,21 @@ var picks;
     
     //input validation to make sure it is a number value - isNaN determines whether a value is NaN(not a number) or not
     if (isNaN(length)) {
-      alert ("Please enter a number!") // alert if the input is not a number
+      alert ("Please enter a number!"); // alert if the input is not a number
       return generatePassword(); // sends you back to the generate function to try again
     }
 
     
     //input validation to make sure the value from the user is atleast 8 characters and no more than 128 characters
     else if (length < 8 || length > 128) {
-      alert("The password length must be between 8 and 128 characters") // alert if the password length is not between 8 and 128 characters
+      alert("The password length must be between 8 and 128 characters"); // alert if the password length is not between 8 and 128 characters
       return generatePassword(); // sends you back to the generate function to try again
     }
 
     
-    //if the user input is a number and is between 8 - 128 it will continue on to ask what they would like in their password
+    
     //This will send the user with a dialog box with a message that they can click ok for yes and cancel for no
-    else {
+    
     promtLowerCase = confirm("Will this password use lowercase letters?"); //Ask the user if they would like lowercase letters in their password
     
     promtUpperCase = confirm("Will this password use uppercase letters?");//Ask the user if they would like uppercase letters in their password
@@ -53,7 +53,7 @@ var picks;
 
     promtSpecial = confirm("Will this password contain special letters like @ or #?");//Ask the user if they would like special letters in their password
 
-    };
+    
     
     
     //start of if and if else statements for what the user wanted
