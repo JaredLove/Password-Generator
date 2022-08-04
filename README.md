@@ -7,6 +7,7 @@ A password Generator that can be used to generate with certain varibles a passwo
 The website includes a generator that will create you a password.
 
 #Website
+[Untitled_ Aug 3, 2022 9_23 PM.webm](https://user-images.githubusercontent.com/106944900/182750124-d8acbb7b-0c2f-4752-9f49-356cabc4d5e1.webm)
 
 
 
