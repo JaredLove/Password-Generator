@@ -119,13 +119,14 @@ function generatePassword() {
     //This is an empty array they will hold our length
     var pass1 = [];
 
-    // a for loop the will randomize all of the varaibles for the users password using math floor and math random that will than sends the picks2 variable using .push to are var pasword
+    //for loop the will randomize all of the varaibles for the users password using math floor and math random that will than sends the picks2 variable using .push to are var pasword
     for (var i = 0; i < length; i ++) {
       var picks2 = picks[Math.floor(Math.random() * picks.length)];
       pass1.push(picks2);
     }
 
     //turns the array into a string that will be sent to the user
+    //got this from w3schools
     var pass2 = pass1.join("");
     //returns the string that will be outputed to user
     return pass2;
