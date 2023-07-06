@@ -1,64 +1,59 @@
-// Assignment code here
+let lower = document.getElementById("lowerCase");
+let upper = document.getElementById("upperCase");
+let specials = document.getElementById("special");
+let number = document.getElementById("numbers");
+let passLength = document.getElementById("password-length");
 //special characters
-special = ["!", "#", "$", "%", "&", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "^", "`", "{", "|", "}", "~", "(", ")", "_"];
+let special = ["!", "#", "$", "%", "&", "*", "+", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "^", "`", "{", "|", "}", "~", "(", ")", "_"];
 
 //numeric values 
-numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 //lower case values
-alphabetLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+let alphabetLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 //upper case values
-alphabetUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+let alphabetUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 
 // variables that will be used
-var length;
-var promtLowerCase;
-var promtUpperCase;
-var promtNumeric;
-var promtSpecial;
-var promtLength;
-var picks;
-
-  
+let picks;
+ 
 //start of generatepassword function
   function generatePassword() {
   //window promt to get info from user for the length of their password
-  length = window.prompt("Choose a password length between 8 and 128");
+ console.log(passLength.value);
 
     
     //input validation to make sure it is a number value - isNaN determines whether a value is NaN(not a number) or not
-    if (isNaN(length)) {
+    if (isNaN(passLength.value)) {
       alert ("Please enter a number!"); // alert if the input is not a number
-      return generatePassword(); // sends you back to the generate function to try again
+       exit(); // sends you back to the generate function to try again
     }
 
     
     //input validation to make sure the value from the user is atleast 8 characters and no more than 128 characters
-    else if (length < 8 || length > 128) {
+    else if (passLength.value < 8 || passLength.value > 128) {
       alert("The password length must be between 8 and 128 characters"); // alert if the password length is not between 8 and 128 characters
-      return generatePassword(); // sends you back to the generate function to try again
+       exit(); // sends you back to the generate function to try again
     }
 
     
     
     //This will send the user with a dialog box with a message that they can click ok for yes and cancel for no
     
-    promtLowerCase = confirm("Will this password use lowercase letters?"); //Ask the user if they would like lowercase letters in their password
+    // promtLowerCase = confirm("Will this password use lowercase letters?"); //Ask the user if they would like lowercase letters in their password
     
-    promtUpperCase = confirm("Will this password use uppercase letters?");//Ask the user if they would like uppercase letters in their password
+    // promtUpperCase = confirm("Will this password use uppercase letters?");//Ask the user if they would like uppercase letters in their password
 
-    promtNumeric = confirm("Will this password use numbers?");//Ask the user if they would like numbers in their password
+    // promtNumeric = confirm("Will this password use numbers?");//Ask the user if they would like numbers in their password
 
-    promtSpecial = confirm("Will this password contain special letters like @ or #?");//Ask the user if they would like special letters in their password
-
-    
+    // promtSpecial = confirm("Will this password contain special letters like @ or #?");//Ask the user if they would like special letters in their password
     
     
     //start of if and if else statements for what the user wanted
     // validation to make sure the user said yes to atleast one option
-    if (!promtLowerCase && !promtUpperCase && !promtNumeric && !promtSpecial) {
+    if (!lower && !upper && !specials && !number) {
 
       picks = alert("Choose atleast one option!"); //sends a alert to the user that they did not select atleast one option
 
@@ -69,7 +64,7 @@ var picks;
     
     //if the user slected all 4 options to be in their password
     //.concat will add 2 or more strings together found this in w3schools
-    else if (promtLowerCase && promtUpperCase && promtNumeric && promtSpecial) {
+    else if (lower && upper && specials && number) {
 
         picks = alphabetLower.concat(alphabetUpper, numeric, special);
 
@@ -78,7 +73,7 @@ var picks;
     
     //if the user slected lowercase, uppercase, and numeric to be in their password
     //.concat will add 2 or more strings together found this in w3schools
-    else if (promtLowerCase && promtUpperCase && promtNumeric) {
+    else if (lower && upper && number) {
 
       picks = alphabetLower.concat(alphabetUpper, numeric);
 
@@ -87,7 +82,7 @@ var picks;
     
     //if the user slected lowercase and uppercase to be in their password
     //.concat will add 2 or more strings together found this in w3schools
-    else if (promtLowerCase && promtUpperCase) {
+    else if (lower && upper) {
 
       picks = alphabetLower.concat(alphabetUpper);
 
@@ -96,7 +91,7 @@ var picks;
     
     //if the user slected lowercase and special characters to be in their password
     //.concat will add 2 or more strings together found this in w3schools
-    else if (promtLowerCase && promtSpecial) {
+    else if (lower && specials) {
 
       picks = alphabetLower.concat(special);
 
@@ -105,7 +100,7 @@ var picks;
     
     //if the user slected lowercase and numeric to be in their password
     //.concat will add 2 or more strings together found this in w3schools
-    else if (promtLowerCase && promtNumeric) {
+    else if (lower && number) {
 
       picks = alphabetLower.concat(numeric);
 
@@ -114,7 +109,7 @@ var picks;
     
     //if the user slected just lowercase to be in their password
     //.concat will add 2 or more strings together found this in w3schools
-    else if (promtLowerCase) {
+    else if (lower) {
 
       picks = alphabetLower;
 
@@ -123,7 +118,7 @@ var picks;
     
     //if the user slected uppercase, numeric, and special characters to be in their password
     //.concat will add 2 or more strings together found this in w3schools
-    else if (promtUpperCase && promtNumeric && promtSpecial) {
+    else if (upper && number && specials) {
 
       picks = alphabetUpper.concat(numeric, special);
 
@@ -132,7 +127,7 @@ var picks;
     
     //if the user slected uppercase and numeric to be in their password
     //.concat will add 2 or more strings together found this in w3schools
-    else if (promtUpperCase && promtNumeric) {
+    else if (upper && number) {
 
       picks = alphabetUpper.concat(numeric);
 
@@ -141,7 +136,7 @@ var picks;
     
     //if the user slected uppercase and special characters to be in their password
     //.concat will add 2 or more strings together found this in w3schools
-    else if (promtUpperCase && promtSpecial) {
+    else if (upper && specials) {
 
       picks = alphabetUpper.concat(special);
 
@@ -150,7 +145,7 @@ var picks;
     
     //if the user slected just uppercase lettes to be in their password
     //.concat will add 2 or more strings together found this in w3schools
-    else if (promtUpperCase) {
+    else if (upper) {
 
       picks = alphabetUpper;
 
@@ -159,7 +154,7 @@ var picks;
     
     //if the user slected numeric and special characters  to be in their password
     //.concat will add 2 or more strings together found this in w3schools
-    else if (promtNumeric && promtSpecial) {
+    else if (number && specials) {
 
       picks = numeric.concat(special);
 
@@ -168,7 +163,7 @@ var picks;
     
     //if the user slected just numeric values to be in their password
     //.concat will add 2 or more strings together found this in w3schools
-    else if (promtNumeric) {
+    else if (number) {
 
       picks = numeric;
 
@@ -177,7 +172,7 @@ var picks;
     
     //if the user slected just special characters to be in their password
     //.concat will add 2 or more strings together found this in w3schools
-    else if (promtSpecial) {
+    else if (specials) {
 
       picks = special;
 
@@ -186,14 +181,14 @@ var picks;
     
     
     //This is an empty array they will hold our length
-    var pass1 = [];
+    let pass1 = [];
 
     
     
-    //for loop the will randomize all of the varaibles for the users password using math floor and math random that will than sends the picks2 variable using .push to are var pasword
-    for (var i = 0; i < length; i ++) {
+    //for loop the will randomize all of the letaibles for the users password using math floor and math random that will than sends the picks2 letiable using .push to are let pasword
+    for (let i = 0; i < passLength.value; i ++) {
 
-      var picks2 = picks[Math.floor(Math.random() * picks.length)];
+      let picks2 = picks[Math.floor(Math.random() * picks.length)];
 
       pass1.push(picks2);
 
@@ -203,7 +198,7 @@ var picks;
     
     //turns the array into a string that will be sent to the user
     //got this from w3schools
-    var pass2 = pass1.join("");
+    let pass2 = pass1.join("");
 
 
     //returns the string that will be outputed to user
@@ -213,20 +208,24 @@ var picks;
 }
 
 // Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+let generateBtn = document.querySelector("#generate");
 
 
 // Write password to the #password input
 function writePassword() {
 
-  var password = generatePassword();
+  let password = generatePassword();
 
-  var passwordText = document.querySelector("#password");
+  let passwordText = document.querySelector("#password");
 
 
   passwordText.value = password;
 
 
+}
+
+function exit() {
+  throw new Error("Input is invalid. Execution stopped.");
 }
 
 
