@@ -10,9 +10,13 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Password Generator</h1>
+        <h1 class="h1" id="h1">Password Generator</h1>
       </header>
-      <div class="card">
+      <div class="mode-btn-div">
+        <button id="dark-mode-btn" class="mode-btn">Dark Mode</button>
+        <button id="light-mode-btn" class="mode-btn" hidden>Light Mode</button>
+      </div>
+      <div class="card" id="card">
         <div class="card-header">
           <h2>Generate a Password</h2>
         </div>
@@ -26,18 +30,26 @@
         </div>
 
         <div class="checkbox" id="checkbox">
-            <input type="number" id="password-length"/>
-            <input type="checkbox" id="lowerCase">Lowercase Letters</input>
-            <p>e.g "a, b, c, d"</p>
-            <input type="checkbox" id="upperCase">Uppercase Letters</input>
-            <p>e.g "A, B, C, D"</p>
-            <input type="checkbox" id="special">Special Characters</input>
-            <p>e.g "!, @, #, $"</p>
-            <input type="checkbox" id="numbers">Numbers</input>
-            <p>e.g "1, 2, 3, 4"</p>
+            <input type="number" id="password-length" placeholder="Between 8 and 128"/>
+            <br>
+                <h1 id="error" class="error">Enter a number between 8 and 128.</h1>
+                <h1 id="error2" class="error2">Select atleast one option.</h1>
+                <h1 id="error3" class="error2">Enter a number between 8 and 128 and select atleast one option.</h1>
+         
+            <input type="checkbox" id="lowercase">
+            <label for="lowercase">Lowercase letters</label>
+            <br>
+            <input type="checkbox" id="uppercase" >
+            <label for="uppercase">Uppercase letters</label>
+            <br>
+            <input type="checkbox" id="special" >
+            <label for="special">Special characters</label>
+            <br>
+            <input type="checkbox" id="numbers" >
+            <label for="numbers">Numbers</label>
         </div>
         <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
+          <button id="generate-btn" class="btn">Generate Password</button>
         </div>
       </div>
     </div>

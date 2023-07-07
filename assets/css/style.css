@@ -14,7 +14,21 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background-color: #DDDDDD;
+}
+
+body.dark-mode{
+  background-color: #222831;
+  color: #fff;
+}
+
+.card.dark-mode{
+  background-color: #30475E;
+  color: #fff;
+}
+
+.h1.dark-mode{
+  color: #fff;
 }
 
 .wrapper {
@@ -71,6 +85,32 @@ header {
   display: block;
   clear: both;
 }
+.mode-btn-div {
+ align-items: center;
+  display: flex;
+  justify-content: center
+}
+.mode-btn {
+  border: none;
+  background-color: hsl(206, 17%, 28%);
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+    0px;
+  color: hsl(0, 0%, 100%);
+  display: inline-block;
+  font-size: 22px;
+  line-height: 22px;
+  margin: 16px 16px 16px 20px;
+  padding: 14px 34px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .btn {
   border: none;
@@ -96,6 +136,53 @@ button[disabled] {
 .float-right {
   float: right;
 }
+
+.error{
+  color: hsl(0, 100%, 50%);
+  font-size: 0.8rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: none;
+}
+
+.error-show {
+  color: hsl(0, 100%, 50%);
+  font-size: 0.8rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: block;
+}
+.error2{
+  color: hsl(0, 100%, 50%);
+  font-size: 0.8rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: none;
+}
+
+.error2-show {
+  color: hsl(0, 100%, 50%);
+  font-size: 0.8rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: block;
+}
+.error3{
+  color: hsl(0, 100%, 50%);
+  font-size: 0.8rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: none;
+}
+
+.error3-show {
+  color: hsl(0, 100%, 50%);
+  font-size: 0.8rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: block;
+}
+
 
 #password {
   -webkit-appearance: none;
